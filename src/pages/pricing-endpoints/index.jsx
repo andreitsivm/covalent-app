@@ -15,6 +15,7 @@ import {
   Select,
   TextField,
   Box,
+  InputLabel,
   Container,
   Typography,
 } from "@material-ui/core";
@@ -56,35 +57,48 @@ const Pricing = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <Select
-            className={styles.select}
+          <div
             style={{
-              marginRight: "36px",
+              display: "flex",
+              flexDirection: "column",
+              marginRight: "16px",
             }}
-            value={ticker}
-            onChange={(event) => setTicker(event.target.value)}
           >
-            <option value="BTC">BTC</option>
-            <option value="ETH">ETH</option>
-            <option value="BNB">BNB</option>
-            <option value="USDT">USDT</option>
-            <option value="UNI">UNI</option>
-            <option value="VEN">VEN</option>
-          </Select>
-          <Select
-            classes={{ select: styles.select }}
-            style={{ marginRight: "36px" }}
-            value={currency}
-            onChange={(event) => setCurrency(event.target.value)}
-          >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="RUB">RUB</option>
-            <option value="CNY">CNY</option>
-          </Select>
+            <InputLabel color="#000">Select ticker</InputLabel>
+            <Select
+              className={styles.select}
+              style={{
+                marginRight: "36px",
+              }}
+              value={ticker}
+              onChange={(event) => setTicker(event.target.value)}
+            >
+              <option value="BTC">BTC</option>
+              <option value="ETH">ETH</option>
+              <option value="BNB">BNB</option>
+              <option value="USDT">USDT</option>
+              <option value="UNI">UNI</option>
+              <option value="VEN">VEN</option>
+            </Select>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <InputLabel>Select currency</InputLabel>
+            <Select
+              classes={{ select: styles.select }}
+              style={{ marginRight: "36px" }}
+              value={currency}
+              onChange={(event) => setCurrency(event.target.value)}
+            >
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="RUB">RUB</option>
+              <option value="CNY">CNY</option>
+            </Select>
+          </div>
           <TextField
             style={{ marginRight: "36px" }}
             id="date"
+            color="red"
             label="Date from"
             type="date"
             onChange={(e) => setDateFrom(e.target.value)}

@@ -94,6 +94,11 @@ const theme = createMuiTheme({
         margin: "16px 0",
       },
     },
+    MuiInputLabel: {
+      style: {
+        color: "#000",
+      },
+    },
   },
 });
 
