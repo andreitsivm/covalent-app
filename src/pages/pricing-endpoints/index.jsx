@@ -32,7 +32,7 @@ const Pricing = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.covalenthq.com/v1/pricing/historical/${currency}/${ticker}/?from=${dateFrom}&to=${dateTo}&prices-at-asc=true`
+        `https://api.covalenthq.com/v1/pricing/historical/${currency}/${ticker}/?key=ckey_4da2218376b24c6ab3f5401a991&from=${dateFrom}&to=${dateTo}&prices-at-asc=true`
       )
       .then((response) => setState(response.data))
       .catch((error) => console.error(error));
